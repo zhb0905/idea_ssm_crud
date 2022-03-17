@@ -6,6 +6,8 @@ import jakarta.validation.Valid;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
@@ -107,15 +109,29 @@ public class EmployeeController {
 
     /**
      * 分页查询所有员工的数据，需要导入Jackson的包
-     *
+     * MVCtest时，需注释掉
      */
-    @GetMapping("/emps")
+/*    @GetMapping("/emps")
     @ResponseBody
     public Msg getEmpsWithJson(@RequestParam(value = "pn",defaultValue = "1") Integer pn) {
         PageHelper.startPage(pn,5);
         List<Employee> emps = employeeService.getAll();
         PageInfo pageInfo = new PageInfo(emps, 5);
         return Msg.success().add("pageInfo",pageInfo);
+    }*/
+
+
+    /**
+     * 用于MVCtest,测试成功将注释掉
+     */
+    @RequestMapping("/emps")
+    public String getEmps(@RequestParam(value = "pn", defaultValue = "1") Integer pn, Model model) {
+        PageHelper.startPage(pn,5);
+        List<Employee> emps = employeeService.getAll();
+        PageInfo page = new PageInfo(emps, 5);
+        model.addAttribute("pageInfo", page);
+        return "list" ;
     }
+
 
 }
