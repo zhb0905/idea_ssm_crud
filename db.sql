@@ -1,5 +1,7 @@
 CREATE SCHEMA `ssm_crud` DEFAULT CHARACTER SET utf8 ;
 
+use ssm_crud;
+
 CREATE TABLE `tbl_dept` (
                             `dept_id` int NOT NULL AUTO_INCREMENT,
                             `dept_name` varchar(45) NOT NULL,
