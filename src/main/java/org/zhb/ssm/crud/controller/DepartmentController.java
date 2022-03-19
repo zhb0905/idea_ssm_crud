@@ -27,6 +27,6 @@ public class DepartmentController {
     @ResponseBody
     public Msg getDepts(){
         List<Department> list = departmentService.getDepts();
-        return Msg.success().add("dept",list);
+        return Msg.success().add("depts",list);
     }
 }
