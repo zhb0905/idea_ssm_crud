@@ -39,3 +39,5 @@
 
 6、版本管理: Git (master、develop、feature—xxx)
 
+### 项目的详细笔记
+https://www.wolai.com/zhb0905/oYjigFDWHBN58ndLPbs7tk
