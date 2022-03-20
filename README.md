@@ -6,7 +6,7 @@
 
 2、MapperTest.java添加演示的数据。 ( 可自行添加其他记录 )
 
-3、部署Tomcat，在 http://localhost:8080/ssm_crud_war/# 查看页面效果
+3、Tomcat部署，在 http://localhost:8080/ssm_crud_war/# 查看页面效果
 
 ### 主要实现的功能
 1、主页查询所有员工，结果分页展示
